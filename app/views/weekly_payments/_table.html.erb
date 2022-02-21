@@ -1,0 +1,51 @@
+<table class="table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Payment Received</th>
+      <%# <th scope="col">Weekly Payment Amount</th> %>
+      <th scope="col">Remaining Amount</th>
+      <th scope="col">Payment Date</th>
+      <th scope="col">Payment Expected Date</th>
+      <th scope="col">Edit Payment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% i = 1 %>
+    <% remainder = @loanee.total.to_f%>
+
+    <% @loanee.weekly_payments.order(created_at: :asc ).each do |weekly_payment|%>
+      <% if remainder - weekly_payment.amount.to_f < 0 %>
+        <tr class="overpay">
+          <th scope="row">Over Paid</th>
+          <td ><%= weekly_payment.amount.to_f.round(2) %></td>
+          <%# <td><%= (weekly_payment.loanee.total / weekly_payment.loanee.loan.weeks).round(2) %>
+          <td><%= remainder - weekly_payment.amount.to_f.round(2) %></td>
+          <td><%= weekly_payment.created_at.strftime("%B %e %Y") %></td>
+          <td><%= ((@loanee.loan.start_date) + (i * 7)).strftime("%B %e %Y") %></td>
+          <td><%= link_to edit_loanee_weekly_payment_path(weekly_payment.loanee_id, weekly_payment) do%>
+              <i class="fas fa-edit"></i>
+            <% end %>
+          </td>
+        </tr>
+        <% i += 1 %>
+        <% remainder -= weekly_payment.amount.to_f %>
+      <% else %>
+        <tr>
+          <th scope="row"><%= i %></th>
+          <td><%= weekly_payment.amount.to_f.round(2) %></td>
+          <%# <td><%= (weekly_payment.loanee.total / weekly_payment.loanee.loan.weeks).round(2) %>
+          <td><%= remainder - weekly_payment.amount.to_f.round(2) %></td>
+          <td><%= weekly_payment.created_at.strftime("%B %e %Y")%></td>
+          <td><%= ((@loanee.loan.start_date) + (i * 7)).strftime("%B %e %Y")%></td>
+          <td><%= link_to edit_loanee_weekly_payment_path(weekly_payment.loanee_id, weekly_payment) do%>
+              <i class="fas fa-edit"></i>
+            <% end %>
+          </td>
+        </tr>
+        <% i += 1 %>
+        <% remainder -= weekly_payment.amount.to_f.round(2) %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

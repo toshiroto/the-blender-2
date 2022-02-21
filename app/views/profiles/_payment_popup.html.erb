@@ -1,0 +1,30 @@
+<button type="button" class="btn btn-large-green" data-toggle="modal" data-target="#exampleModal">
+  Payment
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">How much money did you receive?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for  [@profile.user.active_debt, @weekly_payment] do |f| %>
+        <%= f.input :amount, label: 'Enter amount', input_html: {value: "#{(@profile.user.debts.last.total.round(2) / @profile.user.debts.last.loan.weeks).round(2) }"} %>
+        <%# <p id="sweet-alert-demo" class="btn btn-primary">Confirm</p> %>
+        <%# <%= f.submit "", id:"confirm-link", class:"hidden" %>
+        <%= f.submit "Confirm", class:"btn btn-primary" %>
+        <% end %>
+      </div>
+      <div class="modal-footer" style="text-align:center;">
+        <%# <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> %>
+          <p><small>Weekly payment for <%= @profile.user.first_name%> is <strong style="color:red;">$<%= (@profile.user.debts.last.total.to_f.round(2) / @profile.user.debts.last.loan.weeks).round(2) %></strong></small></p>
+      </div>
+    </div>
+  </div>
+</div>

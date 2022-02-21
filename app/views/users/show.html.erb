@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card-profile">
+    <h1>Hello <%= @user.first_name%>!</h1>
+    <br>
+    <div class="row d-flex justify-content-around">
+      <div>
+        <h3 style="text-align:center;"><%= @user.first_name%>'s payment chart</h3>
+        <%= render 'individual_chart', user:@user%>
+      </div>
+      <div>
+        <h3 style="text-align:center;">Group payment chart</h3>
+        <%= render 'group_chart', user:@user%>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <p style="text-align:center;">Your next paymet is sheduled on: <strong style="color:#DD7373;"><%= render 'next_payment', user:@user, payments_amount:@payments_amount%></strong></p>
+    <%= render 'schedule', loanee:@user.debts.last%>
+    <br>
+    <br>
+    <br>
+    <h3 style="text-align:center;">Group Weekly Payments</h3>
+    <%= render 'graph', user:@user%>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+      <h3 style="text-align:center;">Individual progress</h3>
+      <%= render 'progress', user:@user%>
+  </div>
+</div>

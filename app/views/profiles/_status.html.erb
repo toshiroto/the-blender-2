@@ -1,0 +1,10 @@
+<% case @profile.user.debts.last.status
+           when 'active' %>
+<i class="fas fa-check-circle" style="color: #478564"></i>
+<% when 'closed' %>
+<i class="fas fa-check-circle" style="color: #B7B5B3"></i>
+<% when 'default' %>
+<i class="fas fa-times-circle" style="color: #BA3B46"></i>
+<% when 'late' %>
+<i class="fas fa-clock" style="color: #DBAD6A"></i>
+<% end %>

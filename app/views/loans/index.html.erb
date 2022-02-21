@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="card-dashboard-header">
+    <% expected_amount_total = 0 %>
+    <% actual_amount_total = 0 %>
+    <div class="card-info-dash-title">
+      <h1 style="font-size:36px;"><%= @date.strftime("%A, %B %e %Y") %></h1>
+    </div>
+    <br>
+    <div class="row d-flex justify-content-around align-items-end">
+      <div class="card-info-dash col-md-3">
+        <p id="display"><%= @loans_today.count*3 %><%#= @loans_today.count %> <%#="#{'group'.pluralize(@loans_today.count)}"%></p>
+        <p style="font-size: 24px;">members</p>
+      </div>
+      <div class="card-info-dash col-md-3" style="font-size: 24px;">
+        <p id="display">$<%= @amounts[:expected_amount_total].round.to_s(:delimited) %></p>
+        <p style="font-size: 24px;">total to be collected</p>
+      </div>
+      <div class="card-info-dash col-md-3">
+        <p id="display">$<%= @amounts[:actual_amount_total].round.to_s(:delimited) %></p>
+        <p style="font-size: 24px;">collected today</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="card-dashboard-header my-3">
+    <div class="simple-calendar" id="calendar">
+      <%= month_calendar(events: @loans) do |date, loans| %>
+        <%= puts date %>
+        <strong><%= date.day %></strong>
+        <div class="simple-calendar-info">
+          <% if @dates_hash[date] %>
+            <i class="fas fa-user-alt"></i> <%= @dates_hash[date] %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

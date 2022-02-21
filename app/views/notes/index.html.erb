@@ -1,0 +1,30 @@
+<div class="container p-5">
+  <div class="card-profile p-5">
+    <%= link_to profile_path(@profile) do%>
+      <p><i class="fas fa-long-arrow-alt-left fa-2x"></i></p>
+    <% end %>
+    <div class="collapse" id="collapseNote">
+      <h2>New Note about</h2>
+      <h3>"<%= @profile.user.full_name.titleize%>"</h3>
+      <br>
+      <%= render 'form', profile:@profile, note:@note%>
+    </div>
+    <div class="notes">
+      <br>
+      <h2>Notes</h2>
+      <br>
+      <% if @notes.any? %>
+        <% @notes.reverse_each do |note| %>
+          <p><strong><i><%= note.created_at.strftime("%A %B %d %Y") %></i></strong></p>
+          <p style="color:gray;"><%= note.content %></p>
+          <hr>
+        <% end %>
+      <% else %>
+        <p>No notes about <%= @profile.user.first_name.titleize%> yet.</p>
+      <% end %>
+    </div>
+  </div>
+  <button class="btn btn-large" type="button" data-toggle="collapse" data-target="#collapseNote" aria-expanded="false" aria-controls="collapseNote">
+    New Note
+  </button>
+</div>

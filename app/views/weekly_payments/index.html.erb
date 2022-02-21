@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="card-profile">
+    <h1><%= @loanee.user.first_name %>'s Weekly Payment Information</h1>
+    <br>
+    <div class="row d-flex justify-content-around align-items-end">
+      <div>
+        <%= render 'chart', user:@loanee.user%>
+        <p style="text-align:center;"><strong>Loan Repayment Chart</strong></p>
+      </div>
+      <div>
+        <p><i class="fas fa-money-check"></i> Loan#: <strong><i>100<%= link_to @loanee.loan.id, loan_path(@loanee.loan) %></i></strong></p>
+        <p><i class="fas fa-calendar-day"></i> Loan Start Date: <strong><i><%= @loanee.loan.start_date %></i></strong></p>
+        <p><i class="fas fa-user-clock"></i> Duration: <strong><i><%= @loanee.loan.weeks %></i></strong> weeks</p>
+        <p><i class="fas fa-coins"></i> Loan Total: $<strong><i><%= @loanee.total.to_f.round(2) %></i></strong></p>
+        <p><i class="fas fa-comment-dollar"></i> Weekly Payment Amount: $<strong><i><%= @loanee.user.get_weeklypayment.round(2) %></i></strong></p>
+      </div>
+    </div>
+    <br>
+    <% if @loanee.weekly_payments.any?%>
+      <div style="text-align: center;">
+        <br>
+        <%= render 'table', loanee:@loanee %>
+        <br>
+        <br>
+        <p style="text-align:center;">Next payment for <%= @loanee.user.first_name %> is due on <i><%= render 'next_payment', loanee:@loanee %></i></p>
+        <div> <%= render 'payment_schedule', loanee:@loanee %></div>
+      </div>
+    <% else %>
+      <p class="mark-yellow"><%= @loanee.user.full_name.titleize %> has not made any repayments yet.</p>
+    <% end %>
+    <%= link_to profile_path(@loanee.user.profile) do%>
+      <p><i class="fas fa-long-arrow-alt-left fa-2x"></i></p>
+    <% end %>
+  </div>
+</div>

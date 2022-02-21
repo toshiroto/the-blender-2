@@ -1,0 +1,33 @@
+.navbar-theblender {
+  justify-content: space-between;
+  background: $blue;
+  filter: drop-shadow(0 0 15px rgba(0,0,0,0.2));
+  align-items: center;
+}
+
+.navbar-theblender .navbar-collapse {
+  flex-grow: 0;
+
+}
+
+.navbar-theblender .navbar-brand img {
+  width: 40px;
+  cursor: pointer;
+
+}
+.navbar-light .navbar-nav .nav-link {
+  color: whitesmoke;
+  display: flex;
+  list-style: none;
+}
+
+.navbar-nav li {
+  display: inline-block;
+  padding: 0px 0px 0px 30px;
+
+}
+
+li .fas {
+  color: #fff;
+  padding-left: 20px;
+}

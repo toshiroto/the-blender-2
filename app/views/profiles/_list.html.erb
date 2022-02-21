@@ -1,0 +1,27 @@
+<div class="row align-items-start mb-2" data-refresh-list-target="list">
+  <% @profiles.each do |profile| %>
+    <div class="col-sm-4">
+      <div class="card-identity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(profile.photo.key, width: 300, height: 300, crop: 'fill', gravity: :face, radius: 16, background:"#0000ffff") %>)">
+        <div class="card-identity-content">
+          <%= link_to '', profile_path(profile), class: 'card-link' %>
+          <h2 style="font-size: 22px"><%= profile.user.full_name.titleize %></h2>
+          <% unless profile.user.debts == []  %>
+            <div class="card-identity-status">
+              <% case profile.user.debts.last.status
+              when 'active' %>
+              <i class="fas fa-check-circle" style="color: #4F926E"></i>
+              <% when 'closed' %>
+              <i class="fas fa-check-circle" style="color: #B7B5B3"></i>
+              <% when 'defaulted' %>
+              <i class="fas fa-times-circle" style="color: #C44550"></i>
+              <% when 'late' %>
+              <i class="fas fa-clock" style="color: #DFB77C"></i>
+            <% end %>
+          </div>
+        <% end %>
+        <h3 class="card-village"><%= profile.village %></h3>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

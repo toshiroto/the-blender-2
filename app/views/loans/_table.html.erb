@@ -1,0 +1,25 @@
+<table class="table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Total Debt Amount</th>
+    <th>Weekly Payment</th>
+    <th>Loan Status</th>
+    <th>Edit</th>
+  </tr>
+  <% @loan.loanees.each_with_index do |loanee| %>
+    <tr>
+      <%if loanee.status == "active"%>
+        <td class="name"><i><%= link_to loanee.user.full_name.titleize, profile_path(loanee.user.profile)%></i></td>
+      <% else %>
+        <td class="name"><i><%= loanee.user.full_name.titleize %></i></td>
+      <% end %>
+      <td><%= loanee.total.to_f.round %></td>
+      <td><%= (loanee.total.to_f.round/ @loan.weeks).round   %></td>
+      <td><%= loanee.status %></td>
+      <td><%= link_to edit_loanee_path(loanee.id) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>

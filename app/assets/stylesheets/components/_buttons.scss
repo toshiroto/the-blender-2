@@ -1,0 +1,111 @@
+.btn-create {
+  background-color: $blue;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+  margin: 10px;
+}
+
+.btn-create:hover,
+.btn-create:focus {
+  background-color: $blue;
+  filter: drop-shadow(1px 2px 4px #585858);
+  color: #fff;
+}
+
+.btn-create:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.btn-create:active {
+  background-color: $aqua-blue;
+  box-shadow: none;
+}
+
+.btn-primary {
+  border-radius: 24px;
+}
+.btn-large {
+  width: 160px;
+  height: 80px;
+  background-color: $blue;
+  color: #fff;
+  border-radius: 24px;
+  border-width: 3px;
+  border-color: $blue;
+  font-size: 24px;
+  margin: 16px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+  &:hover {
+    background-color: #fff;
+    color: $blue;
+  }
+  &:active {
+    background-color: $blue;
+  }
+}
+
+.btn-large-green {
+  width: 160px;
+  height: 80px;
+  background-color: $green;
+  color: #fff;
+  border-radius: 24px;
+  border-width: 3px;
+  border-color: $green;
+  font-size: 24px;
+  margin: 16px;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: #fff;
+    color: $blue;
+
+  }
+  &:active {
+    background-color: $light-gray;
+  }
+
+}
+
+
+.btn-search {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $blue;
+  transition: background 0.3s ease;
+}
+
+.btn-search:hover {
+  background: $light-gray;
+  color: $blue;
+}
+
+.btn-search:active {
+  background: $light-gray;
+  color: $blue;
+}

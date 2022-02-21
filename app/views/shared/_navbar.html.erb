@@ -1,0 +1,52 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-theblender mb-3">
+  <%= link_to root_path, class: "navbar-brand px-3" do %>
+    <%= image_tag("envia_white.png") %>
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <nav>
+    <ul class="navbar-nav mr-auto px-3">
+      <% if user_signed_in? && current_user.profile.nil?%>
+        <!-- -->
+        <li>
+          <%= link_to loans_path do %>
+            <i class="fas fa-tachometer-alt fa-2x"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_loan_path do %>
+            <i class="fas fa-file-invoice-dollar fa-2x"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_path do %>
+            <i class="fas fa-user-plus fa-2x"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to profiles_path do %>
+            <i class="fas fa-search fa-2x"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt fa-2x"></i>
+          <% end %>
+        </li>
+      <% elsif user_signed_in? && current_user.profile.nil? == false %>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fas fa-sign-out-alt fa-2x"></i>
+          <% end %>
+        </li>
+        <!-- -->
+      <% else%>
+        <li class="nav-item">
+          <%= link_to new_user_session_path, class: "nav-link" do %>
+            <i class="fas fa-sign-in-alt fa-2x"></i>
+          <% end %>
+        <% end %>
+      </ul>
+    </nav>
+  </div>

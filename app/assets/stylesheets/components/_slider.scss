@@ -1,0 +1,139 @@
+// Reset
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+// body {
+//   padding: 24px 24px;
+
+//   @media (min-width: 600px) {
+//     padding: 60px;
+//   }
+// }
+
+.range-slider {
+  margin: auto;
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 24px;
+  box-shadow: 0 0 15px rgba(85, 85, 85, 0.2);
+  label {
+    margin-bottom: 2rem;
+    color: $black;
+  }
+}
+
+
+// Range Slider
+$range-width: 100% !default;
+
+$range-handle-color: $blue !default;
+$range-handle-color-hover: $blue !default;
+$range-handle-size: 32px !default;
+
+$range-track-color: $light-gray !default;
+$range-track-height: 8px !default;
+
+$range-label-color: $blue !default;
+$range-label-width: 60px !default;
+
+.range-slider {
+  width: $range-width;
+  padding: 16px;
+}
+
+.range-slider__range {
+  -webkit-appearance: none;
+  width: 95%;
+  height: $range-track-height;
+  border-radius: 4px;
+  background: $range-track-color;
+  outline: none;
+  padding: 0;
+
+  // Range Handle
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: $range-handle-size;
+    height: $range-handle-size;
+    border-radius: 8px;
+    background: $range-handle-color;
+    cursor: pointer;
+    transition: background .15s ease-in-out;
+
+    &:hover {
+      background: $range-handle-color-hover;
+    }
+  }
+
+  &:active::-webkit-slider-thumb {
+    background: $range-handle-color-hover;
+  }
+
+  &::-moz-range-thumb {
+    width: $range-handle-size;
+    height: $range-handle-size;
+    border: 0;
+    border-radius: 50%;
+    background: $range-handle-color;
+    cursor: pointer;
+    transition: background .15s ease-in-out;
+
+    &:hover {
+      background: $range-handle-color-hover;
+    }
+  }
+
+  &:active::-moz-range-thumb {
+    background: $range-handle-color-hover;
+  }
+
+  // Focus state
+  &:focus {
+
+    &::-webkit-slider-thumb {
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+  }
+}
+
+
+// Range Label
+.range-slider__value {
+  width: 4rem;
+  display: inline-block;
+  position: relative;
+  color: $blue;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 8px;
+
+  // &:after {
+  //   position: absolute;
+  //   top: 16px;
+  //   left: -7px;
+  //   width: 0;
+  //   height: 0;
+  //   border-top: 7px solid transparent;
+  //   border-right: 7px solid $blue;
+  //   border-bottom: 7px solid transparent;
+  //   content: '';
+  // }
+}
+
+
+// Firefox Overrides
+::-moz-range-track {
+    background: $range-track-color;
+    border: 0;
+}
+
+input::-moz-focus-inner,
+input::-moz-focus-outer {
+  border: 0;
+}

@@ -1,0 +1,18 @@
+<div class="row d-flex justify-content-center">
+  <% i = 1 %>
+  <% @loanee.weekly_payments.order(created_at: :asc).each do |weekly_payment| %>
+    <%if ((@loanee.loan.start_date) + (i * 7)).strftime('%y-%m-%d') == weekly_payment.created_at.strftime('%y-%m-%d') && @loanee.user.get_weeklypayment > weekly_payment.amount.to_f %>
+      <div class="date-card col-md-2 m-2 rounded" style="background-color:#F5F5F5"><%= ((@loanee.loan.start_date) + (i * 7)).strftime('%y-%m-%d') %> <i class="fas fa-exclamation-circle" style="color:#FCD581; font-size:12px;"></i></div>
+    <% else ((@loanee.loan.start_date) + (i * 7)).strftime('%y-%m-%d') == weekly_payment.created_at.strftime('%y-%m-%d') && @loanee.user.get_weeklypayment <= weekly_payment.amount.to_f%>
+      <div class="date-card col-md-2 m-2 rounded" style="background-color:#F5F5F5"><%= ((@loanee.loan.start_date) + (i * 7)).strftime('%y-%m-%d') %> <i class="fas fa-check-square" style="color:#4F926E; font-size:12px;"></i></div>
+      <% i += 1 %>
+    <% end %>
+  <% end %>
+  <% rest = @loanee.loan.weeks - @loanee.weekly_payments.count %>
+  <div class="date-card col-md-2 m-2 rounded" style="background-color:#DD7373;color:white;"><%= ((@loanee.loan.start_date) + (i * 7)).strftime('%y-%m-%d') %></div>
+  <% i += 1 %>
+  <% (rest-1).times do |weekly_payment| %>
+    <div class="date-card col-md-2 m-2 rounded" style="background-color:#F5F5F5"><%= ((@loanee.loan.start_date) + (i * 7)).strftime('%y-%m-%d') %></div>
+    <% i += 1 %>
+  <% end %>
+</div>

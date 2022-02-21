@@ -1,0 +1,9 @@
+<div class="container" style="text-align:center;">
+  <h1>Receive payment</h1>
+  <br>
+  <h2>Weekly payment for <%= @loanee.user.full_name.titleize %> is <strong style="color:red;">$<%= (@loanee.total.to_f.round(2) / @loanee.loan.weeks).round(2) %></strong></h2>
+  <%= render 'form', loanee:@loanee%>
+  <%= link_to profile_path(@loanee.user.profile) do%>
+    <p style="text-align:left;"><i class="fas fa-long-arrow-alt-left fa-2x"></i></p>
+  <% end %>
+</div>

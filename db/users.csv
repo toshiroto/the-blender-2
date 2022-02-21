@@ -1,0 +1,38 @@
+﻿first_name,last_name,encrypted_password,email,village,phone_number,birthday,join_date,business_type,photo_url
+Maribel,Guzman Soriano ,123456789,maribel@gmail.com,San Sebastián Abasolo,951 461 68 38,2-Jan-1985,4-Feb-2013,Venta de cosmeticos,https://live.staticflickr.com/321/19730244923_f2684a00dd_z.jpg
+María,Isabel García Antonio,123456789,maria@gmail.com,San Juan Guelavía,951 141 55 12,19-Mar-1987,4-Sep-2018,Mercería,https://live.staticflickr.com/65535/51500751721_1a25319fcb_6k.jpg
+Isela,Bautista López ,123456789,isela@hotmail.com,San Juan Guelavía,951 195 21 76,4-Mar-1981,4-Sep-2018,merceria,https://live.staticflickr.com/65535/51501033991_8fc96f28b1_6k.jpg
+Ernestina,Mateo Aragón ,123456789,ernestina@bluemail.com,San Marcos Tlapazola,951 301 79 77,7-Sep-1982,10-Sep-2018,Tortillas,https://live.staticflickr.com/65535/51501535019_8ee955df77_4k.jpg
+Amalia,Crúz Martínez ,123456789,amalia@jimail.com,San Marcos Tlapazola,951 574 42 01,10-Jul-1978,10-Sep-2018,Barro,https://live.staticflickr.com/65535/51501831160_fcef5c437b_b.jpg
+Claudia,Gutiérrez Ruíz ,123456789,claudia@gmail.com,Teotitlán del Valle,951 200 15 23,15-Apr-1986,25-May-2010,Jugos y Licuados,https://live.staticflickr.com/65535/51501640409_91e2666852_z.jpg
+Marcelina,Gutiérrez Hernández ,123456789,marcelina@gmail.com,Teotitlán del Valle,951 524 45 87,7-Jun-1962,25-May-2010,Ropa Tipica,https://live.staticflickr.com/65535/51500073472_ca235409a6_z.jpg
+Flor,Gutiérrez Andrez ,123456789,flor@gmail.com,San Sebastián Abasolo,951 101 46 35,7-Jul-1981,6-Jun-2012,Venta por catalogo,https://live.staticflickr.com/65535/51501346535_6310895ede_z.jpg
+Juana,Gutiérrez Andres ,123456789,juanta@bluemail.com,San Sebastián Abasolo,951 287 38 28,23-Jun-1972,6-Jun-2012,Abarrotes,https://live.staticflickr.com/65535/51500972218_cfb30e3a38_z.jpg
+Rosa,Andrez Valeriano ,123456789,rosa@bluemail.com,San Sebastián Abasolo,951 562 80 39,31-Aug-1956,6-Jun-2012,Cultivo de frijol,https://live.staticflickr.com/65535/51500602918_c482590cf6_z.jpg
+Adriana,Lizbeth López López,123456789,adriana@bluemail.com,San Miguel del Valle,951 312 41 09 ,9-Jan-1998,17-Jul-2018,Tapete y Bolsas,https://live.staticflickr.com/65535/51501141473_6f6d1fa052_z.jpg
+Luz,Clarita García Policarpo,123456789,luz@hotmail.com,San Miguel del Valle,951 237 36 45 ,16-Nov-1998,17-Jul-2018,Bordados,https://live.staticflickr.com/65535/51497504303_7a0eb269b3_z.jpg
+Lucía,García  ,123456789,lucia@coldmail.com,San Juan Guelavía,951 329 95 00,16-Sep-1961,4-Sep-2018,Tortillas,https://live.staticflickr.com/443/20266710521_a4ba996f91_z.jpg
+Serafina,Espinoza Gutiérrez ,123456789,serafina@coldmail.com,Santa María Guelacé,951 224 30 90,12-Oct-1959,15-Apr-2015,Frituras,https://live.staticflickr.com/65535/51501521735_abd6dca03d_z.jpg
+Catalina,Sánchez Martínez ,123456789,catalina@coldmail.com,Santa María Guelacé,951 403 11 25 ,30-Apr-1955,28-Jul-2015,Siembra de Maíz,https://live.staticflickr.com/4586/38035160935_03c932bba1_z.jpg
+María,Sosa Luis ,123456789,maria@coldmail.com,Teotitlán del Valle,951 147 28 37,4-Apr-1955,3-Apr-2012,Comedor,https://live.staticflickr.com/65535/51500669371_a686b7776a_z.jpg
+Marcela,Vicente Sosa ,123456789,marela@coldmail.com,Teotitlán del Valle,951 330 47 19,9-Jul-1985,3-Apr-2012,Bolsas,https://live.staticflickr.com/65535/51497485113_582df9619e_z.jpg
+Francisca,Gómez Miguel ,123456789,francisca@coldmail.com,San Miguel del Valle,951 105 42 27,4-Oct-1956,19-Aug-2014,Tortillas,https://live.staticflickr.com/65535/51497550083_cab92beb41_z.jpg
+Albina,López Hernández ,1234567890,Albina@pink.com,San Miguel del Valle,951 226 04 65 ,7-Feb-1970,21-Oct-2014,Costura,https://live.staticflickr.com/65535/51498355695_6e2db9c725_z.jpg
+Adriana,Celina Zárate Zárate,1234567890,Adriana@blue.com,San Sebastián Abasolo,951 412 79 02,8-Sep-1976,9-Sep-2014,Venta por catalogo,https://live.staticflickr.com/65535/51499676062_d714cb8f83_z.jpg
+Reina,Erica López Hernández,1234567890,Reina@tarmail.com,San Miguel del Valle,951 392 07 13,30-May-1995,3-Feb-2015,Bordados,https://live.staticflickr.com/65535/51499830502_60909af7b2_z.jpg
+Teresa,Hernández López ,1234567890,Teresa@bauti.com,San Miguel del Valle,951 520 90 83,6-Dec-1984,7-Apr-2015,Venta de cacao,https://live.staticflickr.com/65535/51500583156_ef9a6e9e9b_z.jpg
+Soledad,Martínez  ,1234567890,Soledad@mail.com,Santa María Guelacé,951 239 7033,17-Dec-1942,16-Mar-2016,Invernadero,https://live.staticflickr.com/65535/51500817048_390ff779a2_z.jpg
+Soledad,Martínez Bazán ,1234567890,Soledad@mailme.com,Teotitlán del Valle,951 283 03 47,3-Dec-1985,9-Mar-2010,Ventas de mezcal,https://live.staticflickr.com/65535/51500818798_157963bd01_z.jpg
+Silvia,Policarpo Bazán ,1234567890,Silvia@hotmail.com,San Miguel del Valle,951 520 91 34 ,9-Jul-1983,3-Feb-2015,Costurera,https://live.staticflickr.com/65535/51500821298_836e8cf50c_z.jpg
+Rafaela,Ruíz Gutiérrez ,1234567890,Rafaela@mailme.com,Teotitlán del Valle,951 52 4 44 52,24-Oct-1962,5-Apr-2011,Tapetes / Productos de Lana,https://live.staticflickr.com/65535/51500852248_d8d8bc768b_z.jpg
+Petra,González Martínez ,1234567890,Petra@hotmail.com,Teotitlán del Valle,951 999 99 99,1-May-1949,26-Jan-2010,Tortillas,https://live.staticflickr.com/65535/51500853783_5c511bd609_z.jpg
+Paulina,Chavez Gutierrez ,1234567890,Paulina@gmail.com,Teotitlán del Valle,951 511 76 36,10-Oct-1949,16-Oct-2018,Tapetes/Bolsas,https://live.staticflickr.com/65535/51500853923_82fc7abf00_z.jpg
+Alejandra,Alavez Lázaro ,1234567890,Alejandra@redmail.com,Teotitlán del Valle,951 524 45 40,24-Apr-1950,1-Dec-2009,Tapetes,https://live.staticflickr.com/65535/51500914976_da8327d692_z.jpg
+Adelaida,Enriqueta Ruíz Carreño,1234567890,Adelaida@gmail.com,Teotitlán del Valle,951 499 07 48,6-Oct-1970,5-Feb-2019,Tapetes,https://live.staticflickr.com/65535/51500918841_8679863490_z.jpg
+Alicia,Mendoza Pablo ,1234567890,Alicia@pink.com,Teotitlán del Valle,951 478 58 70,8-Apr-1976,17-May-2011,Tapetes ,https://live.staticflickr.com/65535/51501083033_94a2c90799_z.jpg
+Luciana,Flores  ,1234567890,Luciana@pink.com,Teotitlán del Valle,951 524 44 85,5-May-1945,3-Apr-2012,Abarrotes,https://live.staticflickr.com/65535/51501301779_19dd6cb38f_z.jpg
+Teresita,Hernández García ,1234567890,Teresita@baza.com,Teotitlán del Valle,951 524 42 96 ,4-Feb-1977,19-Nov-2019,Textiles,https://live.staticflickr.com/65535/51501501260_5c7a3bb530_z.jpg
+Sofía,Hernández Policarpo ,1234567890,Sofía@redmail.com,San Miguel del Valle,951 179 03 73,1-Aug-1973,23-Dec-2014,Tapetes,https://live.staticflickr.com/65535/51501518925_f18ab0686d_z.jpg
+Silvia,González Ruíz ,1234567890,Silvia@blue.com,Teotitlán del Valle,951 121 69 14,28-Jul-1981,13-Nov-2012,Tapetes / Productos de Lana,https://live.staticflickr.com/65535/51501520315_b818ea073e_z.jpg
+Rita,García López ,1234567890,Rita@baza.com,San Miguel del Valle,951 510 71 10,6-Feb-1970,3-Feb-2015,Venta de Rebozos,https://live.staticflickr.com/65535/51501544725_c072d63a14_z.jpg
+Alejandrina,Hernández López ,1234567890,Alejandrina@white.com,San Miguel del Valle,951 105 97 44,2-May-1970,28-Jul-2015,Venta de pasta de mole ,https://live.staticflickr.com/65535/51501626774_2440465417_z.jpg

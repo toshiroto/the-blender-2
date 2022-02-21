@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="card-dashboard-header">
+    <% expected_amount_total = 0 %>
+    <% actual_amount_total = 0 %>
+    <div class="card-title-dash">
+      <h1>Today is <%= Date.today.strftime("%A %B %d %Y") %></h1>
+    </div>
+  </div>
+  <% @loans.each do |loan| %>
+    <% i = 1 %>
+    <% payments_today= [] %>
+    <% loan.weeks.times do %>
+      <%if ((loan.start_date) + (i * 7)) == Date.today%>
+        <p><% payments_today << ((loan.start_date) + (i * 7))%></p>
+        <% i = i + 1%>
+      <% end %>
+    <% end %>
+    <% payments_today.each do |payment_day| %>
+      <div class="card-dashboard-body">
+        <p>Loan id: <%= link_to loan.id, loan_path(loan) %></p>
+        <h3><%= loan.loanees.first.user.profile.village %></h3>
+        <% expected_amount_group = 0 %>
+        <% actual_amount_group = 0 %>
+        <div class="d-flex justify-content-around align-items-center p-3">
+          <%loan.loanees.each do |loanee| %>
+            <%= cl_image_tag(loanee.user.profile.photo.key, :transformation=>[
+            {:gravity=>"face", :height=>80, :width=>80, :crop=>"fill"}, {:radius=>"max"}]) %>
+            <%= loanee.user.full_name.titleize %>
+            <% expected_amount_group= expected_amount_group + (loanee.total.to_f.round(2) / loan.weeks) %>
+            <%loanee.weekly_payments.each do |weekly_payment| %>
+              <%if weekly_payment.created_at.strftime('%Y-%m-%d') == Date.today.strftime('%Y-%m-%d')%>
+                <% actual_amount_group= actual_amount_group + weekly_payment.amount.to_f.round(2)%>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="d-flex" justify-content-around>
+          expected_amount_group == 0 %>
+          <p>You collected $ <%= actual_amount_group %> out of  $ <%= expected_amount_group.round %> from this group</p>
+        <% end %>
+        <% unless %>
+          <% expected_amount_total= expected_amount_total + expected_amount_group %>
+          <% actual_amount_total= actual_amount_total + actual_amount_group %>
+        </div>
+      </div>
+      <hr>
+    <% end %>
+  <% end %>
+  <div class="d-flex justify-content-around">
+    <div class="card-info-dash">
+      <h2>You actually collected $ <%= actual_amount_total.round%></h2>
+    </div>
+    <div class="card-info-dash">
+      <h2>You are expected to collect $ <%= expected_amount_total.round %> </h2>
+    </div>
+  </div>
+</div>

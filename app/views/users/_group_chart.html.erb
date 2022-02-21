@@ -1,0 +1,4 @@
+<% unless user.active_debt.nil? %>
+<% user.active_debt.loan%>
+<%= pie_chart user.payment_ratio_group, library: { pieSliceText: 'value' }, colors: ["#FCD581", "#5A7C98"], donut: true%>
+<% end %>

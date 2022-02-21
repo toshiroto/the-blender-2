@@ -1,0 +1,33 @@
+<div class="container my-5">
+  <div class="card-profile">
+    <div class="d-flex justify-content-between">
+      <div class="img-back">
+        <h1>Loan #100<%= @loan.id%></h2>
+      </div>
+      <div><%= link_to "Add a loanee", new_loan_loanee_path(@loan.id), class:"btn btn-primary" %></div>
+    </div>
+    <div>
+      <br>
+      <div class="row d-flex justify-content-around align-items-end">
+        <div class="col-md-auto"><%= render 'group_chart', loan:@loan %>
+          <h3 style="text-align:center;">Group payment chart</h3>
+        </div>
+        <br>
+        <br>
+        <div class="col-md-auto">
+          <p><i class="fas fa-calendar-day"></i> Loan Start Date: <%= @loan.start_date.strftime("%A %b %d") %></p>
+          <p><i class="fas fa-user-clock"></i> Duration: <strong><%= @loan.weeks %> weeks</strong></p>
+          <p><i class="fas fa-coins"></i> Loan Total: $<strong><i><%= @loan.loan_total.round %></i></strong></p>
+        </div>
+      </div>
+      <br>
+      <br>
+      <%= render 'progress', loan:@loan %>
+      <br>
+      <br>
+      <div style="text-align: center;">
+        <%= render 'table', loan:@loan %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="row align-items-start mb-2" data-refresh-list-target="list">
+  <% users.each do |user| %>
+    <% if user.debts.any?%>
+      <% user.debts.each do |debt| %>
+        <div class="col-sm-4">
+          <% img_list = ["https://cdn.pixabay.com/photo/2020/10/30/08/56/money-5698019_1280.png", "https://images.pexels.com/photos/5849563/pexels-photo-5849563.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260", "https://images.pexels.com/photos/5466806/pexels-photo-5466806.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260", "https://images.pexels.com/photos/210990/pexels-photo-210990.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"]%>
+          <div class="card-identity" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= "#{img_list.sample}"%>)">
+            <div class="card-identity-content">
+              <%= link_to '', loan_path(debt.loan), class: 'card-link' %>
+              <h3 class="card-village">Loan ID <%= debt.loan.id%></h2>
+              <h3 class="card-name">Start Date <%= debt.loan.start_date%></h2>
+              <h2 class="card-name"><%= user.full_name.titleize %></h2>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

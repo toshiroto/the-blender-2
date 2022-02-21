@@ -1,0 +1,30 @@
+<div class="container mb-2">
+  <h1>Create a loan</h1>
+  <%= simple_form_for @loan do |f| %>
+    <%= f.input :start_date, :as => :date, :start_year => Date.today.year %>
+    <label>How many weeks?</label>
+    <div class="range-slider">
+      <div class="d-flex align-items-center p-4">
+        <%= f.input :weeks, label: false, input_html: { class:'range-slider__range', type:'range', value:'15', min: '1', max: '30' }, wrapper_html: { class:'m-0 w-100' } %>
+        <span class="range-slider__value">15</span>
+      </div>
+    </div>
+    <% i = 1%>
+    <%= f.simple_fields_for :loanees do |loanee_form| %>
+      <hr>
+      <label><%= "Loanee #{i}" %></label>
+      <%= loanee_form.association :user, label: false, collection: User.order('first_name ASC'), input_html: { data: { controller:'select2'}, style:'width: 100%' } %>
+      <label>Loan Amount</label>
+      <div class="range-slider">
+        <div class="d-flex align-items-center p-4">
+          <%= loanee_form.input :total, label: false, input_html: { class:'range-slider__range', type:'range', value:'15000', min: '1000', max: '30000', step: '500' }, wrapper_html: { class:'m-0 w-100' } %>
+          $<span class="range-slider__value">15000</span>
+        </div>
+      </div>
+      <% i += 1%>
+    <% end %>
+    <div class="d-flex justify-content-center m-4">
+      <%= f.submit class:"btn btn-large"%>
+    </div>
+  <% end %>
+</div>

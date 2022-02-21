@@ -1,0 +1,6 @@
+  <% i = 1 %>
+<% @user.debts.last.weekly_payments.order(created_at: :asc).each do |weekly_payment| %>
+  <% i += 1 %>
+<% end %>
+<% rest = @user.debts.last.loan.weeks - @user.debts.last.weekly_payments.count %>
+<%= ((@user.debts.last.loan.start_date) + (i * 7)).strftime('%y-%m-%d') %>

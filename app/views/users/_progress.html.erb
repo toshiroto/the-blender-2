@@ -1,0 +1,6 @@
+<% user.debts.last.loan.loanees.each do |loanee|%>
+  <p><%= loanee.user.first_name%><div class="progress"></p>
+    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <%= loanee.user.percentage %>%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><%= loanee.user.percentage.round(2) %>%</div>
+  </div>
+  <br>
+<% end %>

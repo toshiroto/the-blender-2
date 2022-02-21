@@ -1,0 +1,6 @@
+<%= simple_form_for @profile do |f| %>
+  <%= f.input :village, label: 'Edit the village' %>
+  <%= f.input :phone_number, label: 'Edit the phone number' %>
+  <%= f.input :business_type, label: 'Edit the business_type' %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

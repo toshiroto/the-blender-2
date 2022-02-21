@@ -1,0 +1,6 @@
+  <% i = 1 %>
+<% @loanee.weekly_payments.order(created_at: :asc).each do |weekly_payment| %>
+  <% i += 1 %>
+<% end %>
+<% rest = @loanee.loan.weeks - @loanee.weekly_payments.count %>
+<%= ((@loanee.loan.start_date) + (i * 7)).strftime('%y-%m-%d') %>

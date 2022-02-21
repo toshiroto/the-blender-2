@@ -1,0 +1,35 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import 'select2/dist/css/select2';
+@import "flatpickr/dist/themes/light";
+@import "simple_calendar";
+
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+@import "pages/show";
+@import "components/simple_calendar";
+
+
+body {
+  min-height: 100vh;
+  background: rgb(244,244,244);
+  background: linear-gradient(180deg, rgba(244,244,244,1) 0%, rgba(117,179,187,1) 100%);
+}
+
+label {
+  color: $blue;
+  font-size: 18px;
+}
+
+#confirm-link {
+  display: none;
+}

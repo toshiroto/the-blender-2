@@ -1,0 +1,18 @@
+.simple-calendar {
+  padding: 8px;
+  margin: 8px;
+  .day {
+    font-size: 16px;
+    text-align: left;
+  }
+  .calendar-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+}
+
+.simple-calendar-info {
+  font-size: 22px;
+  text-align: center;
+}

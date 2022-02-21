@@ -1,0 +1,12 @@
+<% unless profile.user.active_debt.nil? %>
+  <% total = profile.user.active_debt.total.to_f.round(2) %>
+  <% paid_sum = 0 %>
+  <% profile.user.active_debt.weekly_payments.each {|payment| paid_sum = paid_sum + payment.amount.to_f.round(2)} %>
+  <% if profile.user.active_debt &&  total - paid_sum > 0 %>
+    <%= link_to "View Group", loan_path(profile.user.active_debt.loan), class:'card-view-group-link' %>
+  <% else %>
+    <p class="card-view-group-link">No Active Loans</p>
+  <% end %>
+<% else %>
+  <p class="card-view-group-link">No Active Loans</p>
+<% end %>

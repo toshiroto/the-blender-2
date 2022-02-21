@@ -1,0 +1,4 @@
+<%= simple_form_for [profile, note ], url:profile_notes_path(profile) do |f| %>
+  <%= f.input :content, label: 'Enter notes here' %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

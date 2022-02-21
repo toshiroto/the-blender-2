@@ -1,0 +1,5 @@
+meta_product_name: "The Blender"
+meta_title: "The Blender - Where the blend of tourism and microfinance happens."
+meta_description: "A multidimensional web app for staff capture manage loan payments, display loan info to the borrowers, and for tour guides display profiles of women."
+meta_image: "animales_blender.png" # should exist in `app/assets/images/`
+twitter_account: "@fundacionenvia"   # required for Twitter Cards

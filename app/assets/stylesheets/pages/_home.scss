@@ -1,0 +1,17 @@
+// Specific CSS for your home-page
+body {
+  color: $blue;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+.content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

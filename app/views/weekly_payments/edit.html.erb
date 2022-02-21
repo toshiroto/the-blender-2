@@ -1,0 +1,10 @@
+<div class="container" style="text-align:center;">
+  <h1>Edit payment</h1>
+  <br>
+  <h2><%= @loanee.user.full_name.titleize %> paid <%= @weekly_payment.amount.to_f.round(2) %> on <%= @weekly_payment.created_at.strftime("%A %B %d %Y") %>
+    <br>
+    <%= render 'form_edit', loanee:@loanee%>
+    <%= link_to profile_path(@loanee.user.profile) do%>
+      <p style="text-align:left;"><i class="fas fa-long-arrow-alt-left fa-2x"></i></p>
+    <% end %>
+  </div>

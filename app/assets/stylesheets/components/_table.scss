@@ -1,0 +1,26 @@
+td {
+  text-align: center;
+  font-size: 18px;
+}
+
+th {
+  text-align: center;
+  font-size: 16px;
+}
+
+.overpay {
+  background-color: red;
+  color: whitesmoke;
+}
+
+table{
+   width:100%;
+   table-layout: fixed;
+   overflow-wrap: break-word;
+}
+
+
+td.name {
+  text-align: center;
+  font-size: 16px;
+}

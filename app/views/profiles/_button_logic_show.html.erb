@@ -1,0 +1,18 @@
+<% unless @profile.user.active_debt.nil? %>
+  <% total = @profile.user.active_debt.total.to_f %>
+  <% paid_sum = 0 %>
+  <% @profile.user.active_debt.weekly_payments.each {|payment| paid_sum = paid_sum + payment.amount.to_f.round(2)} %>
+  <% if @profile.user.active_debt &&  total - paid_sum > 0 %>
+    <%#= link_to "Payment", new_loanee_weekly_payment_path(@profile.user.active_debt), class: "btn btn-large"  %>
+    <%= render 'payment_popup', profile:@profile %>
+    <%= link_to "History", loanee_weekly_payments_path(Loanee.find(@profile.user.active_debt.id)), class: "btn btn-large" %>
+  <% elsif @profile.user.active_debt &&  total - paid_sum == 0%>
+    <p class="mark-yellow" style="font-size: 24px"> This user has paid off the loan. </p>
+  <% else %>
+    <p class="mark-red mt-4 mr-4" style="font-size: 18px;color:white;height:100%;width:25%;"> This borrower has over-paid. </p>
+    <%= link_to "History", loanee_weekly_payments_path(Loanee.find(@profile.user.active_debt.id)), class: "btn btn-large" %>
+  <% end %>
+<% else %>
+<br>
+  <p class="mark" style="text-align:center;"><small><i>This user has no active debts.</i></small> </p>
+<% end %>

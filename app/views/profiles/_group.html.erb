@@ -1,0 +1,12 @@
+<div class="card-group-container">
+  <p><%= link_to "Go to Loan group", loan_path(@profile.user.debts.last.loan), class:"btn btn-primary round", style:"box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;border-radius: 16px;"%></p>
+  <% @profile.user.debts.last.loan.loanees.each do |person| if person.user != @profile.user %>
+  <div class="card-member">
+    <%= cl_image_tag(person.user.profile.photo.key, gravity: "face", height: 240, width: 240, crop: 'fill') %>
+    <div class="card-member-infos">
+      <p><%= link_to person.user.full_name.titleize, profile_path(person.user.profile)  %></p>
+    </div>
+  </div>
+<% end %>
+<% end %>
+</div>

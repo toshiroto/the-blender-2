@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Add a note about</h1>
+  <%profile = Profile.find(params[:profile_id])%>
+  <h2>"<%= profile.user.full_name.titleize%>"</h2>
+  <br>
+  <%= render 'form', profile:profile%>
+  <%= link_to profile_notes_path(profile) do %>
+    <div><i class="fas fa-long-arrow-alt-left"></i></div>
+  <% end %>
+</div>

@@ -1,0 +1,4 @@
+<%= simple_form_for [@loanee, @weekly_payment] do |f| %>
+  <%= f.input :amount, input_html: { min: '0', step: 'any' }, label: 'Edit amount' %>
+  <%= f.submit "Edit Payment", data: {confirm: "Are you sure this information is correct?"}, class: "btn btn-primary" %>
+<% end %>

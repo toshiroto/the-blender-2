@@ -1,0 +1,11 @@
+<div class="container">
+  <%= link_to loan_path(@loan) do %>
+    <div><i class="fas fa-long-arrow-alt-left fa-2x"></i></div>
+  <% end %>
+  <%= simple_form_for [@loan, @loanee] do |f| %>
+    <%= f.input :status, label: 'Enter the status', collection: Loanee.statuses.keys %>
+    <%= f.input :total, label: "Enter the total loan amount"%>
+    <%= f.association :user%>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+</div>

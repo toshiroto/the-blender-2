@@ -1,0 +1,18 @@
+<div class="container my-4 pb-4">
+  <h1 style="margin-bottom: 24px">Create a profile</h1>
+  <%= simple_form_for @user, url: user_profile_path do |f| %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.simple_fields_for :profile do |profile_form| %>
+      <%= profile_form.input :village %>
+      <%= profile_form.input :birthday, start_year: Date.today.year - 110, end_year: Date.today.year%>
+      <%= profile_form.input :phone_number %>
+      <%= profile_form.input :join_date, start_year: Date.today.year - 11, end_year: Date.today.year %>
+      <%= profile_form.input :business_type %>
+      <%= profile_form.input :photo, as: :file %>
+    <% end %>
+    <%= f.submit class: "btn btn-large" %>
+  <% end %>
+</div>

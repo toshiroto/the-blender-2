@@ -1,0 +1,7 @@
+<div class="container">
+  <%= simple_form_for @loanee do |f| %>
+    <%= f.input :status, label: 'Edit the status', collection: Loanee.statuses.keys %>
+    <%= f.input :total, label: "Edit the total amount of debt for #{@loanee.user.full_name.titleize}"%>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+</div>
