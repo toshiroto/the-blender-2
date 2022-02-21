@@ -8,7 +8,7 @@ Profile.destroy_all
 User.destroy_all
 
 puts "Seeding..."
-User.create(first_name: 'Joss', last_name: 'Dixon', email: 'joss@theblender.one', password: 'password' )
+User.create(first_name: 'Carlos', last_name: 'Topete', email: 'carlos@theblender.one', password: 'password' )
 
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row, header_converters: :symbol }
 filepath    = File.join(__dir__,'users.csv')
